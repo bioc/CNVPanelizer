@@ -56,7 +56,7 @@ library(CNVPanelizer)
 
 ## Contributors
 
-cristiano.oliveira@med.uni-heidelberg.de
+tanovsky@gmail.com
 
 thomas_wolf71@gmx.de
 

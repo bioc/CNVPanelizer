@@ -287,8 +287,9 @@ BootList <- function(geneNames, sampleMatrix, refmat, replicates) {
   # get the genes positions in the matrix as a list from a gene name vector
   genesPos <- IndexGenesPositions(geneNames)
 
-  if (class(sampleMatrix) != "matrix") {
-    stop(paste("Parameter 'sampleMatrix' has to be of class matrix and is of class", class(sampleMatrix)))
+#  if (class(sampleMatrix) != "matrix") {
+  if (!("matrix" %in% class(sampleMatrix))) {
+        stop(paste("Parameter 'sampleMatrix' has to be of class matrix and is of class", class(sampleMatrix)))
   }
 
   if (is.null(colnames(sampleMatrix)) | length(colnames(sampleMatrix))!=ncol(sampleMatrix)) {
@@ -299,7 +300,8 @@ BootList <- function(geneNames, sampleMatrix, refmat, replicates) {
   # the column makes no sense so we have
   # to check if a matrix or a vector was passed. ncol only works for matrix
   # not for vector
-  if (class(sampleMatrix) == "matrix") {
+#  if (class(sampleMatrix) == "matrix") {
+  if ("matrix" %in% class(sampleMatrix)) {
     iterator <- 1:ncol(sampleMatrix)
     # } else {
     #     iterator <- 1
@@ -312,7 +314,8 @@ BootList <- function(geneNames, sampleMatrix, refmat, replicates) {
       # a vector and matrix are not the same and for a vector
       # iterating over the column makes no sense so we have to check
       # if a mtrix or a vector was passed.
-      if (class(sampleMatrix) == "matrix") {
+#      if (class(sampleMatrix) == "matrix") {
+      if ("matrix" %in% class(sampleMatrix)) {
         testSample <- sampleMatrix[, i]
         # } else {
         #     testSample <- sampleMatrix
