@@ -1,7 +1,7 @@
 Package: CNVPanelizer
 Type: Package
 Title: Reliable CNV detection in targeted sequencing applications
-Version: 1.35.2
+Version: 1.35.3
 Date: 2023-03-28
 Authors@R: c(
     person("Cristiano", "Oliveira", email = "tanovsky@gmail.com", role = c("aut")),
@@ -53,4 +53,3 @@ LazyData: false
 biocViews: Classification, Sequencing, Normalization, CopyNumberVariation, Coverage
 VignetteBuilder: knitr
 NeedsCompilation: no
-PackageStatus: Deprecated
